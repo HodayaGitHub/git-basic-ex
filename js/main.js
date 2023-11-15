@@ -23,7 +23,7 @@ function onBallClick(elBall, maxDiameter) {
     defineBallSize(elBall, elBallsize)
 }
 
-function onThirdBallClick(elBall) {
+function onThirdBallClick() {
     var firstBall = document.querySelector('.first-ball')
     var secondBall = document.querySelector('.second-ball')
 
@@ -40,7 +40,7 @@ function onThirdBallClick(elBall) {
     defineBallSize(secondBall, firstBallSize)
 }
 
-function onFourthBallClick(elBall) {
+function onFourthBallClick() {
     var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
 
     firstAndSecondBalls.forEach(ball => {
