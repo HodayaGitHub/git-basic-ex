@@ -28,43 +28,54 @@ function onBallClick(elBall, maxDiameter) {
 
 
 function onThirdBallClick(elBall) {
-
     var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
+
     firstAndSecondBalls.forEach(ball => {
         var sizeToIncrease = 150
         ball.style.backgroundColor = 'gray'
         ball.style.height = sizeToIncrease + 'px'
         ball.style.width = sizeToIncrease + 'px'
         ball.innerText = sizeToIncrease
-        
+
     })
 }
 
 
 
 
-function onFourthBallClick(elBall){
-    var secondBall = document.querySelector('.second-ball')
-    
-    var secondBallHeight = secondBall.clientHeight
-    var secondBallWidth = secondBall.clientWidth
+function onFourthBallClick(elBall) {
+    var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
 
-    var randomIncrease = getRandomInt(20, 60)
+    firstAndSecondBalls.forEach(ball => {
 
-    if (secondBallHeight > 100) {
-        secondBallHeight -= randomIncrease
-        secondBallWidth -= randomIncrease
-    } 
-    
-    if (secondBallHeight  < 100){
-        secondBallHeight = 100
-        secondBallWidth = 100
-    }
+        var ballHeight = ball.clientHeight
+        var ballWidth = ball.clientWidth
+
+        if (ballWidth === 100) {
+            return
+        }
 
 
-    secondBall.style.height = secondBallHeight + 'px'
-    secondBall.style.width = secondBallWidth + 'px'
-    secondBall.innerText = secondBallHeight
-    
+        var randomIncrease = getRandomInt(20, 60)
+
+        if (ballHeight > 100) {
+            ballHeight -= randomIncrease
+            ballWidth -= randomIncrease
+        }
+
+        if (ballHeight < 100) {
+            ballHeight = 100
+            ballWidth = 100
+        }
+
+        ball.style.height = ballHeight + 'px'
+        ball.style.width = ballWidth + 'px'
+        ball.innerText = ballHeight
+
+    });
+
+
+
+
 
 }

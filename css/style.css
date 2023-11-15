@@ -30,7 +30,9 @@ h1 {
 }
 
 .third-ball {
-    background-color: rgb(62, 193, 202);
-    
+    background-color: rgb(111, 62, 202);
+}
 
+.fourth-ball {
+    background-color: burlywood;
 }
