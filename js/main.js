@@ -1,7 +1,7 @@
 'use strict'
 
 
-function onInit(){
+function onInit() {
     onSixthBallHover()
 }
 
@@ -100,20 +100,29 @@ function onSixthBallClick() {
 
 function onSixthBallHover() {
     var sixthBall = document.querySelector('.sixth-ball')
-    var mouseClickInterval 
-
+    var mouseClickInterval
+    var cycles = 0
     // mouseover - when the mouse is hovering the sixth ball for more than 2 sec: 
-    sixthBall.addEventListener('mouseover', function() {
+
+    sixthBall.addEventListener('mouseover', function () {
         setTimeout(function () {
             // mouseClickInterval = setInterval(console.log('hi'), 2000);
-            mouseClickInterval = setInterval(runMouseClickHandlers(), 2000);
+            mouseClickInterval = setInterval(function () {
+                runMouseClickHandlers()
+                cycles++
+                console.log(cycles)
+                if (cycles === 10) {
+                    clearInterval(mouseClickInterval)
+                }
+
+            }, 2000)
 
         }, 2000)
     })
 
-
     // mouseout - when the mouse is moving from hovring the sixth ball:
-    sixthBall.addEventListener('mouseout', function() {
+    sixthBall.addEventListener('mouseout', function () {
+        cycles = 0
         // Stop the interval when the mouse leaves the sixth ball
         clearInterval(mouseClickInterval);
     });
