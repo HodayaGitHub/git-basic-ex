@@ -21,8 +21,22 @@ function onBallClick(elBall, maxDiameter) {
         elBallWidth = maxDiameter
     }
 
-
     elBall.style.height = elBallHeight + 'px'
     elBall.style.width = elBallWidth + 'px'
     elBall.innerText = elBallWidth
+}
+
+
+function onThirdBallClick(elBall) {
+
+    var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
+    console.log(firstAndSecondBalls); 
+    firstAndSecondBalls.forEach(ball => {
+        var sizeToIncrease = 150
+        ball.style.backgroundColor = 'gray'
+        ball.style.height = sizeToIncrease + 'px'
+        ball.style.width = sizeToIncrease + 'px'
+        ball.innerText = sizeToIncrease
+        
+    });
 }

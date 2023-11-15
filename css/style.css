@@ -16,6 +16,7 @@ h1 {
     font-size: 22px;
     text-align: center;
     font-weight: bold;
+    line-height: 100px; 
 
     border-radius: 50%;
     background-color: yellow;
@@ -25,5 +26,11 @@ h1 {
 
 .second-ball {
     background-color: rgb(62, 193, 202);
+
+}
+
+.third-ball {
+    background-color: rgb(62, 193, 202);
+    
 
 }
