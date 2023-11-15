@@ -1,6 +1,6 @@
 'use strict'
 
-function onBallClick(elBall) {
+function onBallClick(elBall, maxDiameter) {
     var elBallHeight = elBall.clientHeight
     var elBallWidth = elBall.clientWidth
     
@@ -8,7 +8,7 @@ function onBallClick(elBall) {
     var randomIncrease = getRandomInt(20, 60)
 
 
-    if (elBallHeight < 400) {
+    if (elBallHeight < maxDiameter) {
         elBallHeight += randomIncrease
         elBallWidth += randomIncrease
     } else {
@@ -16,9 +16,9 @@ function onBallClick(elBall) {
         elBallWidth = 100
     }
 
-    if (elBallHeight > 400) {
-        elBallHeight = 400
-        elBallWidth = 400
+    if (elBallHeight > maxDiameter) {
+        elBallHeight = maxDiameter
+        elBallWidth = maxDiameter
     }
 
     elBall.style.height = elBallHeight + 'px'
