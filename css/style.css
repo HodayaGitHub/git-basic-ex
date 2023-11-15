@@ -18,10 +18,8 @@ h1 {
     font-weight: bold;
     line-height: 100px; 
 
-    border-radius: 50%;
+    border-radius: 50%;    
     background-color: yellow;
-    
-
 }
 
 .second-ball {
@@ -39,5 +37,10 @@ h1 {
 
 .fifth-ball {
     background-color: rgb(170, 222, 135);
+ 
+}
+
+.sixth-ball {
+    background-color: rgb(222, 135, 208);
  
 }

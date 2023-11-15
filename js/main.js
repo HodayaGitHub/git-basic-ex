@@ -1,5 +1,8 @@
 'use strict'
 
+
+
+
 function onBallClick(elBall, maxDiameter) {
     var elBallsize = elBall.clientHeight
 
@@ -64,4 +67,22 @@ function onFourthBallClick(elBall) {
 
 function onFifthBallClick() {
     document.querySelector('body').style.backgroundColor = getRandomColor()
+}
+
+function onSixthhBallClick() {
+    document.querySelector('body').style.backgroundColor = 'black'
+
+    var elBalls = document.querySelectorAll('.ball')
+    elBalls.forEach(ball => {
+        ball.style.height = '100px'
+        ball.style.width = '100px'
+    
+        if (ball === document.querySelector('.first-ball') || ball === document.querySelector('.second-ball')) {
+            ball.innerText = 100
+        }
+
+    });
+
+
+
 }
