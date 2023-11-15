@@ -7,7 +7,6 @@ function onBallClick(elBall, maxDiameter) {
     elBall.style.backgroundColor = getRandomColor()
     var randomIncrease = getRandomInt(20, 60)
 
-
     if (elBallHeight < maxDiameter) {
         elBallHeight += randomIncrease
         elBallWidth += randomIncrease
@@ -26,7 +25,6 @@ function onBallClick(elBall, maxDiameter) {
     elBall.innerText = elBallWidth
 }
 
-
 function onThirdBallClick(elBall) {
     var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
 
@@ -39,8 +37,6 @@ function onThirdBallClick(elBall) {
 
     })
 }
-
-
 
 
 function onFourthBallClick(elBall) {
@@ -73,9 +69,9 @@ function onFourthBallClick(elBall) {
         ball.innerText = ballHeight
 
     });
+}
 
 
-
-
-
+function onFifthBallClick() {
+    document.querySelector('body').style.backgroundColor = getRandomColor()
 }
