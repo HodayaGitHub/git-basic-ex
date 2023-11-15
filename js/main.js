@@ -30,7 +30,6 @@ function onBallClick(elBall, maxDiameter) {
 function onThirdBallClick(elBall) {
 
     var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
-    console.log(firstAndSecondBalls); 
     firstAndSecondBalls.forEach(ball => {
         var sizeToIncrease = 150
         ball.style.backgroundColor = 'gray'
@@ -38,5 +37,34 @@ function onThirdBallClick(elBall) {
         ball.style.width = sizeToIncrease + 'px'
         ball.innerText = sizeToIncrease
         
-    });
+    })
+}
+
+
+
+
+function onFourthBallClick(elBall){
+    var secondBall = document.querySelector('.second-ball')
+    
+    var secondBallHeight = secondBall.clientHeight
+    var secondBallWidth = secondBall.clientWidth
+
+    var randomIncrease = getRandomInt(20, 60)
+
+    if (secondBallHeight > 100) {
+        secondBallHeight -= randomIncrease
+        secondBallWidth -= randomIncrease
+    } 
+    
+    if (secondBallHeight  < 100){
+        secondBallHeight = 100
+        secondBallWidth = 100
+    }
+
+
+    secondBall.style.height = secondBallHeight + 'px'
+    secondBall.style.width = secondBallWidth + 'px'
+    secondBall.innerText = secondBallHeight
+    
+
 }
