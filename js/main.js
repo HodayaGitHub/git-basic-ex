@@ -1,29 +1,26 @@
 'use strict'
 
 function onBallClick(elBall, maxDiameter) {
-    var elBallHeight = elBall.clientHeight
-    var elBallWidth = elBall.clientWidth
+    var elBallsize = elBall.clientHeight
 
     elBall.style.backgroundColor = getRandomColor()
     var randomIncrease = getRandomInt(20, 60)
 
-    if (elBallHeight < maxDiameter) {
-        elBallHeight += randomIncrease
-        elBallWidth += randomIncrease
+    if (elBallsize < maxDiameter) {
+        elBallsize += randomIncrease
     } else {
-        elBallHeight = 100
-        elBallWidth = 100
+        elBallsize = 100
     }
 
-    if (elBallHeight > maxDiameter) {
-        elBallHeight = maxDiameter
-        elBallWidth = maxDiameter
+    if (elBallsize > maxDiameter) {
+        elBallsize = maxDiameter
     }
 
-    elBall.style.height = elBallHeight + 'px'
-    elBall.style.width = elBallWidth + 'px'
-    elBall.innerText = elBallWidth
+    elBall.style.height = elBallsize + 'px'
+    elBall.style.width = elBallsize + 'px'
+    elBall.innerText = elBallsize
 }
+
 
 function onThirdBallClick(elBall) {
     var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
@@ -43,30 +40,23 @@ function onFourthBallClick(elBall) {
     var firstAndSecondBalls = document.querySelectorAll('.first-ball, .second-ball')
 
     firstAndSecondBalls.forEach(ball => {
-
-        var ballHeight = ball.clientHeight
-        var ballWidth = ball.clientWidth
-
-        if (ballWidth === 100) {
+        var ballSize = ball.clientHeight
+        if (ballSize === 100) {
             return
         }
 
-
         var randomIncrease = getRandomInt(20, 60)
-
-        if (ballHeight > 100) {
-            ballHeight -= randomIncrease
-            ballWidth -= randomIncrease
+        if (ballSize > 100) {
+            ballSize -= randomIncrease
         }
 
-        if (ballHeight < 100) {
-            ballHeight = 100
-            ballWidth = 100
+        if (ballSize < 100) {
+            ballSize = 100
         }
 
-        ball.style.height = ballHeight + 'px'
-        ball.style.width = ballWidth + 'px'
-        ball.innerText = ballHeight
+        ball.style.height = ballSize + 'px'
+        ball.style.width = ballSize + 'px'
+        ball.innerText = ballSize
 
     });
 }
