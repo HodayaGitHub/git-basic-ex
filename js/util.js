@@ -15,3 +15,9 @@ function getRandomInt(min, max) {
     return color;
 }
 
+function defineBallSize(ball, ballSize) {
+  ball.style.height = ballSize + 'px'
+  ball.style.width = ballSize + 'px'
+  ball.innerText = ballSize
+}
+

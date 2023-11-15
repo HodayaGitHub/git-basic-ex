@@ -1,6 +1,5 @@
 'use strict'
 
-
 function onInit() {
     onSixthBallHover()
 }
@@ -21,9 +20,7 @@ function onBallClick(elBall, maxDiameter) {
         elBallsize = maxDiameter
     }
 
-    elBall.style.height = elBallsize + 'px'
-    elBall.style.width = elBallsize + 'px'
-    elBall.innerText = elBallsize
+    defineBallSize(elBall, elBallsize)
 }
 
 function onThirdBallClick(elBall) {
@@ -33,26 +30,14 @@ function onThirdBallClick(elBall) {
     var firstBallSize = firstBall.clientHeight
     var secondBallSize = secondBall.clientHeight
 
-    console.log(firstBallSize)
     var firstBallColor = window.getComputedStyle(firstBall).backgroundColor
     var secondBallColor = window.getComputedStyle(secondBall).backgroundColor
-
 
     firstBall.style.backgroundColor = secondBallColor
     secondBall.style.backgroundColor = firstBallColor
 
-
-    firstBall.style.width = secondBallSize + 'px'
-    firstBall.style.height = secondBallSize + 'px'
-    firstBall.innerText = secondBallSize
-
-
-    secondBall.style.width = firstBallSize + 'px'
-    secondBall.style.height = firstBallSize + 'px'
-    secondBall.innerText = firstBallSize
-
-    console.log(firstBallColor, secondBallColor)
-
+    defineBallSize(firstBall, secondBallSize)
+    defineBallSize(secondBall, firstBallSize)
 }
 
 function onFourthBallClick(elBall) {
@@ -73,10 +58,8 @@ function onFourthBallClick(elBall) {
             ballSize = 100
         }
 
-        ball.style.height = ballSize + 'px'
-        ball.style.width = ballSize + 'px'
-        ball.innerText = ballSize
-    });
+        defineBallSize(ball, ballSize)
+    })
 }
 
 function onFifthBallClick() {
@@ -92,7 +75,7 @@ function onSixthBallClick() {
         ball.style.height = '100px'
         ball.style.width = '100px'
         ball.innerText = 100
-    });
+    })
 
     document.querySelector('.first-ball').style.backgroundColor = 'yellow'
     document.querySelector('.second-ball').style.backgroundColor = 'rgb(62, 193, 202)'
@@ -107,23 +90,22 @@ function onSixthBallHover() {
     // mouseover - when the mouse is hovering the sixth ball for more than 2 sec: 
     sixthBall.addEventListener('mouseover', function () {
         setTimeout(function () {
-            // mouseClickInterval = setInterval(console.log('hi'), 2000);
+            // mouseClickInterval = setInterval(console.log('hi'), 2000)
             mouseClickInterval = setInterval(function () {
                 runMouseClickHandlers()
                 cycles++
-                console.log(cycles)
+                console.log(`Num of cycels: ${cycles}`)
                 if (cycles === 10) {
                     clearInterval(mouseClickInterval)
                 }
             }, 2000)
         }, 2000)
     })
-
     // mouseout - when the mouse is moving from hovring the sixth ball:
     sixthBall.addEventListener('mouseout', function () {
         cycles = 0
         // Stop the interval when the mouse leaves the sixth ball
-        clearInterval(mouseClickInterval);
+        clearInterval(mouseClickInterval)
     })
 
 
@@ -135,6 +117,3 @@ function runMouseClickHandlers() {
     onThirdBallClick(document.querySelector('.third-ball'))
     onFourthBallClick(document.querySelector('.fourth-ball'))
 }
-
-
-
