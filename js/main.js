@@ -1,7 +1,9 @@
 'use strict'
 
 
-
+function onInit(){
+    onSixthBallHover()
+}
 
 function onBallClick(elBall, maxDiameter) {
     var elBallsize = elBall.clientHeight
@@ -96,7 +98,6 @@ function onSixthBallClick() {
     document.querySelector('.second-ball').style.backgroundColor = 'rgb(62, 193, 202)'
 }
 
-onSixthBallHover()
 function onSixthBallHover() {
     var sixthBall = document.querySelector('.sixth-ball')
     var mouseClickInterval 
@@ -104,7 +105,9 @@ function onSixthBallHover() {
     // mouseover - when the mouse is hovering the sixth ball for more than 2 sec: 
     sixthBall.addEventListener('mouseover', function() {
         setTimeout(function () {
-            mouseClickInterval = setInterval(console.log('hi'), 2000);
+            // mouseClickInterval = setInterval(console.log('hi'), 2000);
+            mouseClickInterval = setInterval(runMouseClickHandlers(), 2000);
+
         }, 2000)
     })
 
@@ -116,6 +119,11 @@ function onSixthBallHover() {
     });
 
 
+}
 
-
+function runMouseClickHandlers() {
+    onBallClick(document.querySelector('.first-ball'), 400)
+    onBallClick(document.querySelector('.second-ball'), 250)
+    onThirdBallClick(document.querySelector('.third-ball'))
+    onFourthBallClick(document.querySelector('.fourth-ball'))
 }
