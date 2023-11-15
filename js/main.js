@@ -3,9 +3,7 @@
 function onBallClick(elBall, maxDiameter) {
     var elBallHeight = elBall.clientHeight
     var elBallWidth = elBall.clientWidth
-    
-    elBall.style.backgroundColor = getRandomColor()
-    
+
     elBall.style.backgroundColor = getRandomColor()
     var randomIncrease = getRandomInt(20, 60)
 
