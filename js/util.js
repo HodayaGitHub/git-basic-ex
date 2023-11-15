@@ -14,3 +14,4 @@ function getRandomInt(min, max) {
     }
     return color;
 }
+
